@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "9836fdf4-41fd-44d6-a8c2-638c0f916233",
+		"name": "App đánh giá",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18253277",
+		"_collection_link": "https://nguyenvanthaind73.postman.co/workspace/Sample-Workspace~ae4e2ce0-dc86-46ae-ab80-affbe48a2aa1/collection/18253277-9836fdf4-41fd-44d6-a8c2-638c0f916233?action=share&source=collection_link&creator=18253277"
+	},
+	"item": [
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "post file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/career/post",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"career",
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Người dùng",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"20020381\",\n  \"role\": 3,\n  \"fullName\": \"Nguyễn Văn C\",\n  \"ngaySinh\": \"1975-08-25T15:12:27.058Z\",\n  \"gioiTinh\": false,\n  \"email\": \"nvc@gmail.com\",\n  \"address\": \"HN\",\n  \"sdt\": \"0987654321\",\n  \"avatar\": \"\",\n  \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/nguoi-dung/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"nguoi-dung",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/nguoi-dung/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"nguoi-dung",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/nguoi-dung/get/page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"nguoi-dung",
+								"get",
+								"page"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "id:2 and username~'*CB*'",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "role,desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"CBHD1\",\n  \"password\": \"$2a$10$26RR3y9H8EUp5AK/Tk1KZ.kTf5xawAZhXSRNbeWhvlWd.ODajH1L2\",\n  \"role\": 1,\n  \"fullName\": \"Nguyễn Văn AAAAA\",\n  \"ngaySinh\": \"1975-08-25T15:12:27.058Z\",\n  \"gioiTinh\": false,\n  \"email\": \"cbhdnva@gmail.com\",\n  \"address\": \"HN\",\n  \"sdt\": \"0987654321\",\n  \"avatar\": \"\",\n  \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/nguoi-dung/put/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"nguoi-dung",
+								"put",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/nguoi-dung/del/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"nguoi-dung",
+								"del",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Đánh giá",
+			"item": [
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idSv\": 3,\n  \"diem1\": 30,\n  \"diem2\": 25,\n  \"diem3\": 20,\n  \"diem4\": 15,\n  \"diem5\": 10,\n  \"tong\": 100,\n  \"xepLoai\": \"Xuất sắc\",\n  \"status\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/danh-gia/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"danh-gia",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/danh-gia/get/page?filter=createdDate > '01-08-2023' and createdDate < '31-01-2024'",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"danh-gia",
+								"get",
+								"page"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "createdDate > '01-08-2023' and createdDate < '31-01-2024'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idSv\": 3,\n  \"diem1\": 30,\n  \"diem2\": 25,\n  \"diem3\": 20,\n  \"diem4\": 15,\n  \"diem5\": 10,\n  \"tong\": 100,\n  \"xepLoai\": \"Xuất sắc\",\n  \"status\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/danh-gia/put/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"danh-gia",
+								"put",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/danh-gia/del/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"danh-gia",
+								"del",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lựa chọn",
+			"item": [
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": 1000,\n  \"content\": \"Bị cấm thi hoặc bỏ thi cuối kỳ không có lý do: - 2đ/lần\",\n  \"point\": -2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/lua-chon/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"lua-chon",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/lua-chon/get/page?filter=type:1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"lua-chon",
+								"get",
+								"page"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "type:1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": 1,\n  \"content\": \"Bị cấm thi hoặc bỏ thi cuối kỳ không có lý do: - 2đ/lần\",\n  \"point\": -2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/lua-chon/put/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"lua-chon",
+								"put",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/lua-chon/del/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"lua-chon",
+								"del",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lop hoc",
+			"item": [
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Lop5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/lop-hoc/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"lop-hoc",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/danh-gia/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"danh-gia",
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
